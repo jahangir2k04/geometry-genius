@@ -5,25 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geometry Genius</title>
+
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/be153e41e9.js" crossorigin="anonymous"></script>
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- css link  -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class="mx-2 my-2 md:mx-12 md:my-12">
-    <header class="px-2 md:px-12 py-5 rounded-lg">
+    <header class="flex items-center justify-between px-2 md:px-12 py-5 rounded-lg">
             <div>
-                <h1 class="font-semibold text-5xl">Interactive</h1>
-                <h3 class="font-semibold text-2xl">Geometry Genius</h3>
+                <h1 class="font-bold text-5xl">Interactive</h1>
+                <h3 class="font-bold text-2xl">Geometry Genius</h3>
             </div>
                 
             <div>
-                <button id="btn-blog" class="text-lg font-semibold text-white px-9 py-2 rounded-lg">Blog</button>
+                <button id="btn-blog" class="bg-sky-600 text-lg font-bold text-white px-9 py-2 rounded-lg">Blog</button>
             </div>
     </header>
 
     <main>
+        <!-- card section  -->
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 ">
+                <div class="text-center py-8 border rounded-lg">
+                    <div class="mb-8">
+                        <img class="mx-auto mb-8" src="images/triangle.png" alt="">
+                        <h3 class="text-2xl font-bold">Triangle</h3>
+                        <p class="mt-2 mb-3">Area (A) = 0.5 x b x h</p>
+                        <div class="flex justify-center gap-3">
+                            <input class="w-1/4 px-3 bg-slate-100 rounded" type="text" placeholder="b"> <p>cm</p>
+                            <input class="w-1/4 px-3 bg-slate-100 rounded" type="text" placeholder="h"> <p>cm</p>
+                        </div>
+                    </div>
+                    <button class="px-32 py-4 md:px-24 md:py-3 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
+                </div>
+            </div>
 
+        </section>
     </main>
 
 </body>

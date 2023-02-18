@@ -2,9 +2,6 @@
 /* header style */
 header{
     background: rgba(16, 144, 216, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .header-container h1{
@@ -12,9 +9,4 @@ header{
 }
 .header-container h3{
     color: rgba(17, 17, 17, 0.6);
-}
-
-/* btn blog  */
-#btn-blog{
-    background: #1090D8;
 }
