@@ -29,18 +29,87 @@
     <main>
         <!-- card section  -->
         <section class="mt-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 ">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
                 <div class="text-center py-8 border rounded-lg">
                     <div class="mb-8">
                         <img class="mx-auto mb-8" src="images/triangle.png" alt="">
                         <h3 class="text-2xl font-bold">Triangle</h3>
                         <p class="mt-2 mb-3">Area (A) = 0.5 x b x h</p>
                         <div class="flex justify-center gap-3">
-                            <input class="w-1/4 px-3 bg-slate-100 rounded" type="text" placeholder="b"> <p>cm</p>
-                            <input class="w-1/4 px-3 bg-slate-100 rounded" type="text" placeholder="h"> <p>cm</p>
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="b"> <p>cm</p>
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="h"> <p>cm</p>
                         </div>
                     </div>
-                    <button class="px-32 py-4 md:px-24 md:py-3 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
+                    <button class="px-32 py-4 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
+                </div>
+                
+                <div class="text-center py-8 border rounded-lg">
+                    <div class="mb-8">
+                        <img class="mx-auto mb-8" src="images/rectangle.png" alt="">
+                        <h3 class="text-2xl font-bold">Rectangle</h3>
+                        <p class="mt-2 mb-3">Area (A) = w x l</p>
+                        <div class="flex justify-center gap-3">
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="w"> <p>cm</p>
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="l"> <p>cm</p>
+                        </div>
+                    </div>
+                    <button class="px-32 py-4 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
+                </div>
+
+                <div class="text-center py-8 border rounded-lg">
+                    <div class="mb-8">
+                        <img class="mx-auto mb-8" src="images/parallelogram.png" alt="">
+                        <h3 class="text-2xl font-bold">Parallelogram</h3>
+                        <p class="my-2">Area (A) = b x h</p>
+                        <p>b=10cm, h=12cm</p>
+                        <div class="flex justify-center gap-3 hidden">
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="b"> <p>cm</p>
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="h"> <p>cm</p>
+                        </div>
+                    </div>
+                    <button class="mt-3 px-32 py-4 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
+                </div>
+
+                <div class="text-center py-8 border rounded-lg">
+                    <div class="mb-8">
+                        <img class="mx-auto mb-8" src="images/rhombus.png" alt="">
+                        <h3 class="text-2xl font-bold">Rhombus</h3>
+                        <p class="my-2">Area (A) = 0.5 X d<sub>1</sub> x d<sub>2</sub></p>
+                        <p>d<sub>1</sub>=16cm , d<sub>2</sub>=8cm</p>
+                        <div class="flex justify-center gap-3 hidden">
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="d1"> <p>cm</p>
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="d2"> <p>cm</p>
+                        </div>
+                    </div>
+                    <button class="mt-3 px-32 py-4 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
+                </div>
+
+                <div class="text-center py-8 border rounded-lg">
+                    <div class="mb-8">
+                        <img class="mx-auto mb-9" src="images/pentagon.png" alt="">
+                        <h3 class="text-2xl font-bold">Pentagon</h3>
+                        <p class="my-2">Area (A) = 0.5 x p x b</p>
+                        <p>p = 6cm, b = 10cm</p>
+                        <div class="flex justify-center gap-3 hidden">
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="d1"> <p>cm</p>
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="d2"> <p>cm</p>
+                        </div>
+                    </div>
+                    <button class="mt-4 px-32 py-4 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
+                </div>
+
+                <div class="text-center py-8 border rounded-lg">
+                    <div class="mb-8">
+                        <img class="mx-auto mb-8" src="images/ellipse.png" alt="">
+                        <h3 class="mt-11 text-2xl font-bold">Ellipse</h3>
+                        <p class="my-2">Area (A) = <span>&#960</span>ab</p>
+                        <p>a = 10cm, b = 4cm</p>
+                        <div class="flex justify-center gap-3 hidden">
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="d1"> <p>cm</p>
+                            <input class="w-1/4 px-3 py-1 bg-slate-100 rounded" type="text" placeholder="d2"> <p>cm</p>
+                        </div>
+                    </div>
+                    <button class="mt-4 px-32 py-4 bg-sky-600 rounded-lg text-xl text-white font-bold">Calculate</button>
                 </div>
             </div>
 
