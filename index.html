@@ -28,8 +28,8 @@
 
     <main>
         <!-- card section  -->
-        <section class="mt-12 md:flex gap-4">
-            <div id="card-6" class="grid grid-cols-1 md:grid-cols-3 md:col-span-3 gap-4">
+        <section class="mt-12 flex flex-col md:flex-row gap-4">
+            <div id="card-6" class="grid md:grid-cols-3 gap-4 md:w-[70%]">
                 <!-- Triangle card -->
                 <div class="py-8 text-center border rounded-lg">
                     <div class="px-6">
@@ -175,59 +175,18 @@
                 </div>
             </div>
 
-            <div class="border rounded-lg h-96">
+            <div class="border rounded-lg md:w-[30%]">
                 <div class="text-center font-bold mt-4">
                     <h3 class="underline underline-offset-4">Area Calculation</h3>
                 </div>
                 <div class="mt-2 p-3">
-                    <table class="mx-auto w-80">
-                        <tr class="h-11">
-                            <td>1. Triangle</td>
-                            <td class="text-center">
-                                <span id="triangle-area"></span> cm<sup>2</sup>
-                            </td>
-                            <td class="text-end">
-                                <button class="text-sm bg-sky-600 font-semibold text-white p-2 rounded-lg">Conver to m<sup>2</sup></button>
-                            </td>  
-                        </tr>
-                        <tr class="h-11">
-                            <td>2. Rectangle</td>
-                            <td class="text-center">
-                                <span id="rectangle-area"></span> cm<sup>2</sup></td>
-                            <td class="text-end">
-                                <button class="text-sm bg-sky-600 font-semibold text-white p-2 rounded-lg">Conver to m<sup>2</sup></button>
-                            </td>  
-                        </tr>
-                        <tr class="h-11">
-                            <td>3. Parallelogram</td>
-                            <td class="text-center">
-                                <span id="parallelogram-area"></span> cm<sup>2</sup></td>
-                            <td class="text-end">
-                                <button class="text-sm bg-sky-600 font-semibold text-white p-2 rounded-lg">Conver to m<sup>2</sup></button>
-                            </td>  
-                        </tr>
-                        <tr class="h-11">
-                            <td>4. Rhombus</td>
-                            <td class="text-center"><span id="rhombus-area"></span> cm<sup>2</sup></td>
-                            <td class="text-end">
-                                <button class="text-sm bg-sky-600 font-semibold text-white p-2 rounded-lg">Conver to m<sup>2</sup></button>
-                            </td>  
-                        </tr>
-                        <tr class="h-11">
-                            <td>5. Pentagon</td>
-                            <td class="text-center"><span id="pentagon-area"></span> cm<sup>2</sup></td>
-                            <td class="text-end">
-                                <button class="text-sm bg-sky-600 font-semibold text-white p-2 rounded-lg">Conver to m<sup>2</sup></button>
-                            </td>  
-                        </tr>
-                        <tr class="h-11">
-                            <td>6. Ellipse</td>
-                            <td class="text-center"><span id="ellipse-area"></span> cm<sup>2</sup></td>
-                            <td class="text-end">
-                                <button class="text-sm bg-sky-600 font-semibold text-white p-2 rounded-lg">Conver to m<sup>2</sup></button>
-                            </td>  
-                        </tr>
-                    </table>
+                    <div class="overflow-x-auto">
+                        <table class="table w-full">
+                          <tbody id="table-container">
+                            
+                          </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

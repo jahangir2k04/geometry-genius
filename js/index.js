@@ -3,23 +3,25 @@ function getInputField(fieldId){
     const inputField = document.getElementById(fieldId);
     const inputFieldString = inputField.value;
     const inputFieldValue = parseFloat(inputFieldString);
-    // check vaidation
-    if(isNaN(inputFieldValue)){
-        alert('Please input a valid number');
-        return;
+    return inputFieldValue;
+}
+
+// get the input filed and set the input field value to the text field with validation for triangle and rectangle
+function setTextValueTR(inputFieldId, textFieldId){
+    const inputField = getInputField(inputFieldId);
+    const textField = document.getElementById(textFieldId);
+
+    if(isNaN(inputField)){
+        return textField.innerText = '';
     }
     else{
-        if(inputFieldValue < 0){
-            alert('Please input a valid number');
-        }
-        else{
-            return inputFieldValue;
-        }
+        textField.innerText = inputField;
     }
 }
 
 
-// get the other text field 
+
+// get the parallelogram, rhombus, pentagon, ellipse shape text field 
 function getTextField(textId){
     const textValue = document.getElementById(textId);
     const textValueString = textValue.innerText;
@@ -27,51 +29,81 @@ function getTextField(textId){
     return value;
 }
 
-// set the input field value to the text field
-function setTextValueTR(inputFieldId, textFieldId){
-    const field1 = getInputField(inputFieldId);
-    const textField1 = document.getElementById(textFieldId);
-
-    textField1.innerText = field1;
-}
-
-// set the text field value to the text field
+// set the text field value to the text field for parallelogram, rhombus, pentagon, ellipse shape
 function setTextValue(inputFieldId, textFieldId){
-    const field1 = getInputField(inputFieldId);
-    const textField1 = document.getElementById(textFieldId);
+    const field = getInputField(inputFieldId);
+    const textField = document.getElementById(textFieldId);
 
-    textField1.innerText = field1;
+    textField.innerText = field;
 }
 
-// 1. triangle area calculate
+
+
+// create table row 
+function createRow(shapeName, totalValue){
+    const table = document.getElementById('table-container');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${serial}</td>
+        <td>${shapeName}</td>
+        <td class="text-end">${totalValue} cm<sup>2</sup></td>
+        <td class="text-end">
+        <button class="bg-sky-600 font-semibold text-white p-2 rounded-lg">Conver to m<sup>2</sup>
+        </td>
+
+    `;
+    table.appendChild(tr);
+}
+
+let serial = 0;
+
+// 1. ----------triangle area calculated -------------
+
 document.getElementById('triangle-btn-calculate').addEventListener('click', function(){
     const field1 = getInputField('triangle-input-field-1');
     const field2 = getInputField('triangle-input-field-2');
-    const totalValue = 0.5 * field1 * field2;
-
-    // set text value
+    let totalValue = 0.5 * field1 * field2;
+    
+    // check validation
+    if(isNaN(totalValue)){
+        alert('Please input a valid number.');
+        totalValue = '';
+    }
+    
+    // set text value in text field
     setTextValueTR('triangle-input-field-1', 'triangle-text-field-1')
     setTextValueTR('triangle-input-field-2', 'triangle-text-field-2')
+    
+    // show table row 
+    serial +=1;
+    const shapeName = 'Triangle';
+    createRow(shapeName, totalValue);
 
-    // set the area
-    const setArea = document.getElementById('triangle-area');
-    setArea.innerText = totalValue;
 })
 
 // 2. rectangle area calculate
 document.getElementById('rectangle-btn-calculate').addEventListener('click', function(){
     const field1 = getInputField('rectangle-input-field-1');
     const field2 = getInputField('rectangle-input-field-2');
-    const totalValue = field1 * field2;
+    let totalValue = field1 * field2;
 
-    // set text value
+    // check validation
+    if(isNaN(totalValue)){
+        alert('Please input a valid number.');
+        totalValue = '';
+    }
+
+    // set text value in text field
     setTextValueTR('rectangle-input-field-1', 'rectangle-text-field-1')
     setTextValueTR('rectangle-input-field-2', 'rectangle-text-field-2')
 
-    // set the area
-    const setArea = document.getElementById('rectangle-area');
-    setArea.innerText = totalValue;
+    // show table row 
+    serial +=1;
+    const shapeName = 'Rectangle';
+    createRow(shapeName, totalValue);
+
 })
+
 
 // 3. parallelogram area calculate 
 document.getElementById('parallelogram-btn-calculate').addEventListener('click', function(){
@@ -133,3 +165,6 @@ document.getElementById('ellipse-btn-calculate').addEventListener('click', funct
     const setArea = document.getElementById('ellipse-area');
     setArea.innerText = totalValue;
 })
+
+
+// 
