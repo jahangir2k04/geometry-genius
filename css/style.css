@@ -9,3 +9,8 @@ header h3{
 #card-6 p, h3{
     color: #414141;
 }
+
+/* calculation area height */
+.calc-area-height{
+    height: 450px;
+}
