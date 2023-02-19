@@ -176,3 +176,8 @@ document.getElementById('ellipse-btn-calculate').addEventListener('click', funct
     createRow(shapeName, totalValue.toFixed(2));
 })
 
+
+// question and answer
+document.getElementById('btn-blog').addEventListener('click', function(){
+    window.location.href = 'question.html'
+})
