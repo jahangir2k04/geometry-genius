@@ -181,3 +181,39 @@ document.getElementById('ellipse-btn-calculate').addEventListener('click', funct
 document.getElementById('btn-blog').addEventListener('click', function(){
     window.location.href = 'question.html'
 })
+
+// random color generate function
+function randomColor(event){
+    const allCard = event.target;
+    allCard.style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + 
+    ',' + Math.round(Math.random() * 255) + 
+    ',' + Math.round(Math.random() * 255) + ')';
+}
+
+// 1. rectangle card random color generate
+document.getElementById('triangle').addEventListener('mouseenter', function(event){
+    randomColor(event);
+})
+
+// 2. rectangle card random color generate
+document.getElementById('rectangle').addEventListener('mouseenter', function(event){
+    randomColor(event);
+})
+
+// 3. parallelogram card random color generate
+document.getElementById('parallelogram').addEventListener('mouseenter', function(event){
+    randomColor(event);
+})
+
+// 4. rhombus card random color generate
+document.getElementById('rhombus').addEventListener('mouseenter', function(event){
+    randomColor(event);
+})
+// 5. pentagon card random color generate
+document.getElementById('pentagon').addEventListener('mouseenter', function(event){
+    randomColor(event);
+})
+// 6. ellipse card random color generate
+document.getElementById('ellipse').addEventListener('mouseenter', function(event){
+    randomColor(event);
+})
