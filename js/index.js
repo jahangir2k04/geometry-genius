@@ -1,5 +1,5 @@
 // get the triangle and rectangle input field
-function getInputField(fieldId){
+function getInputField(fieldId) {
     const inputField = document.getElementById(fieldId);
     const inputFieldString = inputField.value;
     const inputFieldValue = parseFloat(inputFieldString);
@@ -7,21 +7,33 @@ function getInputField(fieldId){
 }
 
 // get the input filed and set the input field value to the text law with validation for triangle and rectangle
-function setTextValueTR(inputFieldId, textFieldId){
+function setTextValueTR(inputFieldId, textFieldId) {
     const inputField = getInputField(inputFieldId);
     const textField = document.getElementById(textFieldId);
 
-    if(isNaN(inputField)){
+    if (isNaN(inputField)) {
         return textField.innerText = '';
     }
-    else{
+    else {
         textField.innerText = inputField;
     }
 }
 
+// another way to the above declare function
+// function setTextValueTR(inputFieldId, textFieldId){
+//     const textField = document.getElementById(textFieldId);
+
+//     if(isNaN(inputFieldId)){
+//         return textField.innerText = '';
+//     }
+//     else{
+//         textField.innerText = inputFieldId;
+//     }
+// }
+
 
 // create table row in area calculation section
-function createRow(shapeName, totalValue){
+function createRow(shapeName, totalValue) {
     const table = document.getElementById('table-container');
     const tr = document.createElement('tr');
     tr.style.height = '50px';
@@ -40,60 +52,56 @@ function createRow(shapeName, totalValue){
 let serial = 0;
 
 // 1. ----------triangle area calculated -------------
-document.getElementById('triangle-btn-calculate').addEventListener('click', function(){
+document.getElementById('triangle-btn-calculate').addEventListener('click', function () {
     const field1 = getInputField('triangle-input-field-1');
     const field2 = getInputField('triangle-input-field-2');
     let totalValue = 0.5 * field1 * field2;
-    
+
     // check validation
-    if(totalValue > 0 ){
-        totalValue;
+    if (isNaN(field1 && field2)) {
+        alert("Please input a valid number.");
+    } else {
+        // set the input field value to the text law
+        setTextValueTR('triangle-input-field-1', 'triangle-text-field-1')
+        setTextValueTR('triangle-input-field-2', 'triangle-text-field-2')
+
+        // another way : set the input field value to the text law
+        // setTextValueTR(field1, 'triangle-text-field-1')
+        // setTextValueTR(field2, 'triangle-text-field-2')
+
+        // show table row 
+        serial += 1;
+        // const shapeName = 'Triangle';
+        createRow('Triangle', totalValue);
     }
-    else{
-        alert('Please input a valid number.');
-        totalValue = '';
-    }
-    
-    // set the input field value to the text law
-    setTextValueTR('triangle-input-field-1', 'triangle-text-field-1')
-    setTextValueTR('triangle-input-field-2', 'triangle-text-field-2')
-    
-    // show table row 
-    serial +=1;
-    const shapeName = 'Triangle';
-    createRow(shapeName, totalValue);
 
 })
 
 // 2. rectangle area calculate
-document.getElementById('rectangle-btn-calculate').addEventListener('click', function(){
+document.getElementById('rectangle-btn-calculate').addEventListener('click', function () {
     const field1 = getInputField('rectangle-input-field-1');
     const field2 = getInputField('rectangle-input-field-2');
     let totalValue = field1 * field2;
 
     // check validation
-    if(totalValue > 0 ){
-        totalValue;
-    }
-    else{
-        alert('Please input a valid number.');
-        totalValue = '';
-    }
+    if (isNaN(field1 && field2)) {
+        alert("Please input a valid number.");
+    } else {
+        // set the input field value to the text law
+        setTextValueTR('rectangle-input-field-1', 'rectangle-text-field-1')
+        setTextValueTR('rectangle-input-field-2', 'rectangle-text-field-2')
 
-    // set the input field value to the text law
-    setTextValueTR('rectangle-input-field-1', 'rectangle-text-field-1')
-    setTextValueTR('rectangle-input-field-2', 'rectangle-text-field-2')
-
-    // show table row 
-    serial +=1;
-    const shapeName = 'Rectangle';
-    createRow(shapeName, totalValue);
+        // show table row 
+        serial += 1;
+        const shapeName = 'Rectangle';
+        createRow(shapeName, totalValue);
+    }
 
 })
 
 
 // get the parallelogram, rhombus, pentagon, ellipse shape text field 
-function getTextField(textId){
+function getTextField(textId) {
     const textValue = document.getElementById(textId);
     const textValueString = textValue.innerText;
     const value = parseFloat(textValueString);
@@ -101,7 +109,7 @@ function getTextField(textId){
 }
 
 // set the text value to the text law for  the parallelogram, rhombus, pentagon, ellipse shape text field 
-function setTextValue(textValueId, textFieldId){
+function setTextValue(textValueId, textFieldId) {
     const getTextValue = getTextField(textValueId);
     const setTextField = document.getElementById(textFieldId);
 
@@ -110,7 +118,7 @@ function setTextValue(textValueId, textFieldId){
 
 
 // 3. parallelogram area calculate 
-document.getElementById('parallelogram-btn-calculate').addEventListener('click', function(){
+document.getElementById('parallelogram-btn-calculate').addEventListener('click', function () {
     const textValue1 = getTextField('parallelogram-text-value-1');
     const textValue2 = getTextField('parallelogram-text-value-2');
     const totalValue = textValue1 * textValue2;
@@ -120,14 +128,14 @@ document.getElementById('parallelogram-btn-calculate').addEventListener('click',
     setTextValue('parallelogram-text-value-2', 'parallelogram-text-field-2');
 
     // show table row 
-    serial +=1;
+    serial += 1;
     const shapeName = 'Parallelogram';
     createRow(shapeName, totalValue);
 
 })
 
 // 4. rhombus area calculate 
-document.getElementById('rhombus-btn-calculate').addEventListener('click', function(){
+document.getElementById('rhombus-btn-calculate').addEventListener('click', function () {
     const textValue1 = getTextField('rhombus-text-value-1');
     const textValue2 = getTextField('rhombus-text-value-2');
     const totalValue = 0.5 * textValue1 * textValue2;
@@ -136,15 +144,15 @@ document.getElementById('rhombus-btn-calculate').addEventListener('click', funct
     setTextValue('rhombus-text-value-1', 'rhombus-text-field-1');
     setTextValue('rhombus-text-value-2', 'rhombus-text-field-2');
 
-     // show table row 
-     serial +=1;
-     const shapeName = 'Rhombus';
-     createRow(shapeName, totalValue);
- 
+    // show table row 
+    serial += 1;
+    const shapeName = 'Rhombus';
+    createRow(shapeName, totalValue);
+
 })
 
 // 5. pentagon area calculate
-document.getElementById('pentagon-btn-calculate').addEventListener('click', function(){
+document.getElementById('pentagon-btn-calculate').addEventListener('click', function () {
     const textValue1 = getTextField('pentagon-text-value-1');
     const textValue2 = getTextField('pentagon-text-value-2');
     const totalValue = 0.5 * textValue1 * textValue2;
@@ -154,66 +162,74 @@ document.getElementById('pentagon-btn-calculate').addEventListener('click', func
     setTextValue('pentagon-text-value-2', 'pentagon-text-field-2');
 
     // show table row 
-    serial +=1;
+    serial += 1;
     const shapeName = 'Pentagon';
     createRow(shapeName, totalValue);
 })
 
 // 6. ellipse area calculate
-document.getElementById('ellipse-btn-calculate').addEventListener('click', function(){
+document.getElementById('ellipse-btn-calculate').addEventListener('click', function () {
     const textValue1 = getTextField('ellipse-text-value-1');
     const textValue2 = getTextField('ellipse-text-value-2');
     const pi = 3.1416;
     const totalValue = pi * textValue1 * textValue2;
-    
+
     // set the text value to the text law
     setTextValue('ellipse-text-value-1', 'ellipse-text-field-1');
     setTextValue('ellipse-text-value-2', 'ellipse-text-field-2');
 
     // show table row 
-    serial +=1;
+    serial += 1;
     const shapeName = 'ellipse';
     createRow(shapeName, totalValue.toFixed(2));
 })
 
 
 // question and answer
-document.getElementById('btn-blog').addEventListener('click', function(){
+document.getElementById('btn-blog').addEventListener('click', function () {
     window.location.href = 'question.html'
 })
 
 // random color generate function
-function randomColor(event){
+function randomColor(event) {
     const allCard = event.target;
-    allCard.style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + 
-    ',' + Math.round(Math.random() * 255) + 
-    ',' + Math.round(Math.random() * 255) + ')';
+    allCard.style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) +
+        ',' + Math.round(Math.random() * 255) +
+        ',' + Math.round(Math.random() * 255) + ')';
 }
 
-// 1. rectangle card random color generate
-document.getElementById('triangle').addEventListener('mouseenter', function(event){
-    randomColor(event);
-})
+// set the random color in the 6 card using function
+const cards = document.getElementById('card-6').children;
+for (let card of cards) {
+    card.addEventListener('mouseenter', function () {
+        card.style.backgroundColor = randomColor(event);
+    })
+}
 
-// 2. rectangle card random color generate
-document.getElementById('rectangle').addEventListener('mouseenter', function(event){
-    randomColor(event);
-})
+// // 1. rectangle card random color generate
+// document.getElementById('triangle').addEventListener('mouseenter', function(event){
+//     randomColor(event);
+// })
 
-// 3. parallelogram card random color generate
-document.getElementById('parallelogram').addEventListener('mouseenter', function(event){
-    randomColor(event);
-})
+// // 2. rectangle card random color generate
+// document.getElementById('rectangle').addEventListener('mouseenter', function(event){
+//     randomColor(event);
+// })
 
-// 4. rhombus card random color generate
-document.getElementById('rhombus').addEventListener('mouseenter', function(event){
-    randomColor(event);
-})
-// 5. pentagon card random color generate
-document.getElementById('pentagon').addEventListener('mouseenter', function(event){
-    randomColor(event);
-})
-// 6. ellipse card random color generate
-document.getElementById('ellipse').addEventListener('mouseenter', function(event){
-    randomColor(event);
-})
+// // 3. parallelogram card random color generate
+// document.getElementById('parallelogram').addEventListener('mouseenter', function(event){
+//     randomColor(event);
+// })
+
+// // 4. rhombus card random color generate
+// document.getElementById('rhombus').addEventListener('mouseenter', function(event){
+//     randomColor(event);
+// })
+// // 5. pentagon card random color generate
+// document.getElementById('pentagon').addEventListener('mouseenter', function(event){
+//     randomColor(event);
+// })
+// // 6. ellipse card random color generate
+// document.getElementById('ellipse').addEventListener('mouseenter', function(event){
+//     randomColor(event);
+// })
