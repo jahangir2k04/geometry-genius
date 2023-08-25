@@ -5,3 +5,4 @@
 * CSS
 * Tailwind CSS
 * JavaScript
+* DOM
